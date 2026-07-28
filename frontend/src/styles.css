@@ -1,0 +1,90 @@
+:root {
+  --bg: #f7f7f5;
+  --surface: #ffffff;
+  --border: #e2e2e2;
+  --text: #222222;
+  --text-muted: #777777;
+  --brand: #1f3a2b;
+  --brand-hover: #14261c;
+  --danger: #a33333;
+  --error: #b00020;
+  --input-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #14181a;
+  --surface: #1e2427;
+  --border: #333c40;
+  --text: #eaeaea;
+  --text-muted: #9aa3a7;
+  --brand: #3f7a54;
+  --brand-hover: #4f9668;
+  --danger: #e07575;
+  --error: #ff6b6b;
+  --input-bg: #262d30;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  transition: background .2s ease, color .2s ease;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px 40px; }
+
+.header { background: var(--brand); color: #fff; margin-bottom: 24px; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; }
+.logo { color: #fff; font-weight: 700; font-size: 20px; text-decoration: none; }
+.nav { display: flex; align-items: center; gap: 8px; }
+.nav a { color: #fff; text-decoration: none; margin-left: 20px; }
+.nav a:hover { text-decoration: underline; }
+
+.theme-toggle {
+  margin-left: 20px; background: rgba(255,255,255,0.15); border: none; color: #fff;
+  padding: 6px 10px; border-radius: 999px; cursor: pointer; font-size: 14px; line-height: 1;
+}
+.theme-toggle:hover { background: rgba(255,255,255,0.25); }
+
+.filters { display: flex; gap: 12px; margin-bottom: 20px; }
+.filters input, .filters select { padding: 8px; font-size: 14px; background: var(--input-bg); color: var(--text); border: 1px solid var(--border); border-radius: 4px; }
+.filters input { flex: 1; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+.card-title { font-weight: 600; color: var(--brand); text-decoration: none; }
+.card-category { font-size: 12px; color: var(--text-muted); }
+.card-price { font-weight: 700; }
+.card-price.large { font-size: 24px; margin: 12px 0; }
+
+.btn { background: var(--brand); color: #fff; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; font-size: 14px; }
+.btn:hover { background: var(--brand-hover); }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn-link { background: none; border: none; color: var(--danger); cursor: pointer; text-decoration: underline; }
+
+.qty-row { display: flex; gap: 12px; align-items: center; margin: 16px 0; }
+.qty-row input { width: 70px; padding: 8px; background: var(--input-bg); color: var(--text); border: 1px solid var(--border); border-radius: 4px; }
+.stock { color: var(--text-muted); font-size: 14px; }
+
+.cart-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+.cart-table th, .cart-table td { text-align: left; padding: 10px; border-bottom: 1px solid var(--border); }
+.cart-table input { width: 60px; padding: 6px; background: var(--input-bg); color: var(--text); border: 1px solid var(--border); border-radius: 4px; }
+.cart-total { font-size: 20px; font-weight: 700; margin: 16px 0; }
+
+.form { display: flex; flex-direction: column; gap: 14px; max-width: 480px; }
+.form label { display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
+.form input, .form textarea { padding: 8px; font-size: 14px; font-family: inherit; background: var(--input-bg); color: var(--text); border: 1px solid var(--border); border-radius: 4px; }
+
+.error { color: var(--error); }
+
+/* ---------- Telegram floating button ---------- */
+.tg-float {
+  position: fixed; bottom: 22px; right: 22px; z-index: 100;
+  width: 56px; height: 56px; border-radius: 50%; background: #229ed9;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25); text-decoration: none;
+  transition: transform .15s ease;
+}
+.tg-float:hover { transform: scale(1.06); }
+.tg-float svg { width: 30px; height: 30px; }
