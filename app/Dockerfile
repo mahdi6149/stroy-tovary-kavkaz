@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY main.py db.py ./
+COPY *.py ./
 COPY routers ./routers
 
 EXPOSE 3000
